@@ -1,17 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View } from "../Themed";
-import { TextInput } from "react-native";
+import { Pressable, StyleSheet, TextInput } from "react-native";
 
-export function ChatInput() {
+type Props = {
+    onSendMessage: (text: string, isUser: boolean) => void;
+};
+
+export function ChatInput({ onSendMessage }: Props) {
+    const [disabled, setDisabled] = useState(false);
+    const [input, setInput] = useState("");
+    function handleSend() {
+        if (input.trim() === "") return; //Evita o envio de mensagens vazias
+        onSendMessage(input, true);
+        setInput("");
+        setDisabled(true);
+        setTimeout(() => {
+            setDisabled(false);
+        }, 800);
+    }
+
     return (
-        <View>
+        <View style={styles.container}>
             <TextInput
-                placeholder="Digite sua mensagem"
+                placeholder="Digite sua mensagem..."
                 placeholderTextColor="#888"
-                multiline={false}
-                numberOfLines={1}
-                maxLength={100}
-            ></TextInput>
+                value={input}
+                onChangeText={(text) => setInput(text)}
+                multiline={true}
+                style={{ width: "80%" }}
+            />
+            <Pressable disabled={disabled} onPress={handleSend}>
+                <Text>Enviar</Text>
+            </Pressable>
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: "row",
+        width: "100%",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: 10,
+    },
+});
