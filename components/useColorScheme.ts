@@ -1,1 +1,5 @@
-export { useColorScheme } from 'react-native';
+import { Colors } from "@/constants/Colors";
+
+export function useColorScheme(): Colors {
+    return "light";
+}

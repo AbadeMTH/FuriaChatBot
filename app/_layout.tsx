@@ -9,16 +9,16 @@ import 'react-native-reanimated';
 import { useColorScheme } from '@/components/useColorScheme';
 
 export {
-  // Catch any errors thrown by the Layout component.
+  //Captura erros de navegação
   ErrorBoundary,
 } from 'expo-router';
 
-export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(tabs)',
-};
+// export const unstable_settings = {
+//   // Ensure that reloading on `/modal` keeps a back button present.
+//   initialRouteName: '(tabs)',
+// };
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
+//Previne que a splash screen seja escondida automaticamente até que o app esteja pronto
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {

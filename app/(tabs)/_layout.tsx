@@ -4,14 +4,13 @@ import { Tabs } from "expo-router";
 
 import Colors from "@/constants/Colors";
 import { useColorScheme } from "@/components/useColorScheme";
-import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 
 //Função que renderiza um ícone na barra de navegação
 function TabBarIcon(props: {
     name: React.ComponentProps<typeof FontAwesome>["name"];
     color: string;
 }) {
-    return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
+    return <FontAwesome size={24} style={{ marginBottom: -3 }} {...props} />;
 }
 
 export default function TabLayout() {
@@ -20,12 +19,12 @@ export default function TabLayout() {
     return (
         <Tabs
             screenOptions={{
-                tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
-                headerShown: useClientOnlyValue(false, true),
+                tabBarActiveTintColor: Colors[colorScheme].tint,
+                headerShown: true,
             }}
         >
             <Tabs.Screen
-                name="home"
+                name="index"
                 options={{
                     title: "Home",
                     tabBarIcon: ({ color }) => (
@@ -38,7 +37,7 @@ export default function TabLayout() {
                 options={{
                     title: "Chat",
                     tabBarIcon: ({ color }) => (
-                        <TabBarIcon name="comment" color={color} />
+                        <TabBarIcon name="comment-o" color={color} />
                     ),
                 }}
             />
@@ -47,7 +46,7 @@ export default function TabLayout() {
                 options={{
                     title: "Matches",
                     tabBarIcon: ({ color }) => (
-                        <TabBarIcon name="play" color={color} />
+                        <TabBarIcon name="gamepad" color={color} />
                     ),
                 }}
             />
@@ -56,7 +55,7 @@ export default function TabLayout() {
                 options={{
                     title: "Line-Up",
                     tabBarIcon: ({ color }) => (
-                        <TabBarIcon name="user" color={color} />
+                        <TabBarIcon name="user-o" color={color} />
                     ),
                 }}
             />
