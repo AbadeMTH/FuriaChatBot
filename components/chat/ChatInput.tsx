@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Text, View } from "../Themed";
-import { Pressable, StyleSheet, TextInput } from "react-native";
+import { StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import Colors from "@/constants/Colors";
 
 type Props = {
     onSendMessage: (text: string, isUser: boolean) => void;
@@ -26,12 +27,12 @@ export function ChatInput({ onSendMessage }: Props) {
                 placeholderTextColor="#888"
                 value={input}
                 onChangeText={(text) => setInput(text)}
-                multiline={true}
-                style={{ width: "80%" }}
+                multiline={false}
+                style={styles.textInput}
             />
-            <Pressable disabled={disabled} onPress={handleSend}>
-                <Text>Enviar</Text>
-            </Pressable>
+            <TouchableOpacity style={styles.sendMessageButton} disabled={disabled} onPress={handleSend}>
+                <Text>></Text>
+            </TouchableOpacity>
         </View>
     );
 }
@@ -39,9 +40,27 @@ export function ChatInput({ onSendMessage }: Props) {
 const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
-        width: "100%",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: 10,
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        height: 50,
     },
+    textInput: {
+        borderRadius: 50,
+        borderWidth: 1,
+        borderColor: Colors.paletteColor.b500,
+        width: "84%",
+        paddingLeft: 15,
+    },
+    sendMessageButton: {
+        width: "10%",
+        height: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 50,
+        marginHorizontal: "2%",
+        borderWidth: 1,
+        borderColor: Colors.paletteColor.b500,
+    }
 });

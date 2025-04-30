@@ -3,18 +3,14 @@ import { FlatList, KeyboardAvoidingView, StyleSheet } from "react-native";
 import { Text, View } from "@/components/Themed";
 import { MessageBox } from "@/components/chat/MessageBox";
 import { ChatInput } from "@/components/chat/ChatInput";
-import { Message } from "@/components/chat/mocks";
-import { useEffect, useRef, useState } from "react";
-import { findResponse } from "@/components/chat/utils/findResponse";
+import { Message } from "@/components/chat/chatUtils/mocks";
+import { useRef, useState } from "react";
+import { findResponse } from "@/components/chat/chatUtils/findResponse";
+import Colors from "@/constants/Colors";
 
 export default function ChatScreen() {
     const [messages, setMessages] = useState<Message[]>([]);
     const flatlistRef = useRef<FlatList>(null);
-    useEffect(() => {
-        if (flatlistRef.current) {
-            flatlistRef.current.scrollToEnd({ animated: true });
-        }
-    }, [messages]);
 
     const handleSendMessage = (text: string, isUser: boolean) => {
         const newMessage: Message = {
@@ -43,28 +39,35 @@ export default function ChatScreen() {
     };
     return (
         <View style={styles.container}>
-            <KeyboardAvoidingView>
-                {messages.length == 0 ? (
-                    <>
-                        <Text>Digite sua primeira mensagem meu furioso!</Text>
-                        <ChatInput onSendMessage={handleSendMessage} />
-                    </>
+            <KeyboardAvoidingView
+                style={{ flex: 1 }}
+                behavior="padding"
+                keyboardVerticalOffset={90}
+            >
+                {messages.length === 0 ? (
+                    <View style={styles.messageEmptyChatBox}>
+                        <Text style={styles.messageEmptyChat}>
+                            Digite sua primeira mensagem meu furioso!
+                        </Text>
+                    </View>
                 ) : (
-                    <>
-                        <FlatList
-                            ref={flatlistRef}
-                            data={messages}
-                            renderItem={({ item }) => (
-                                <MessageBox
-                                    message={item.text}
-                                    isUser={item.isUser}
-                                />
-                            )}
-                            keyExtractor={(item) => item.id.toString()}
-                        />
-                        <ChatInput onSendMessage={handleSendMessage} />
-                    </>
+                    <FlatList
+                        ref={flatlistRef}
+                        data={messages}
+                        renderItem={({ item }) => (
+                            <MessageBox
+                                message={item.text}
+                                isUser={item.isUser}
+                            />
+                        )}
+                        keyExtractor={(item) => item.id.toString()}
+                        onContentSizeChange={() =>
+                            flatlistRef.current?.scrollToEnd({ animated: true })
+                        }
+                        contentContainerStyle={styles.listContentStyle}
+                    />
                 )}
+                <ChatInput onSendMessage={handleSendMessage} />
             </KeyboardAvoidingView>
         </View>
     );
@@ -79,5 +82,20 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         fontWeight: "bold",
+    },
+    messageEmptyChatBox: {
+        flex: 1,
+        justifyContent: "center",
+        padding: 20,
+    },
+    messageEmptyChat: {
+        fontSize: 20,
+        fontWeight: "bold",
+        color: Colors.light.text,
+        textAlign: "center",
+    },
+    listContentStyle: {
+        paddingBottom: 20,
+        paddingTop: 10,
     },
 });

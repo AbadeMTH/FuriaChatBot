@@ -12,19 +12,19 @@ type KeywordResponse = {
 
 export const furiaKeywords: KeywordResponse[] = [
     {
-        keywords: ["oi", "ola", "olá", "eae", "fala", "eai"],
+        keywords: ["oi", "ola", "olá", "eae", "fala", "eai", "iai", "salve", "iae"],
         response:
             "Fala, fã da FURIA! 😎 Pronto pra saber tudo sobre a line de CS2 e os próximos campeonatos?",
     },
     {
         keywords: ["sim", "bora", "fala", "vamos", "vamo", "claro"],
         response:
-            "Perfeito meu panteão 🐾, pergunte o que quiser e tentarei responder!",
+            "Perfeito meu panterão 🐾, pergunte o que quiser e tentarei responder!",
     },
     {
         keywords: ["furia", "fúria", "sobre a furia", "quem é a furia"],
         response:
-            "A FURIA é uma das maiores organizações de esports do Brasil, com uma história marcante e uma paixão pela agressividade tática no CS2! 🐆🔥",
+            "A FURIA é uma das maiores organizações de esports do Brasil, com uma história marcante e uma paixão pela agressividade tática no CS2! 🔥",
     },
     {
         keywords: ["line", "lineup", "time", "jogadores", "elenco"],
