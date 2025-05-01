@@ -1,12 +1,10 @@
-const tintColorLight = "#EF4444";
-const tintColorDark = "#EF4444";
 const paletteColor = {
     r50: "#FEF2F2",
     r100: "#FEE2E2",
     r200: "#FECACA",
     r300: "#FCA5A5",
     r400: "#F87171",
-    r500: "#EF4444", // Main Furia red
+    r500: "#EF4444",
     r600: "#DC2626",
     r700: "#B91C1C",
     r800: "#991B1B",
@@ -21,24 +19,24 @@ const paletteColor = {
     b700: "#374151",
     b800: "#1F2937",
     b900: "#111827",
+    white: "#FFFFFF",
+    black: "#000000",
 };
 
-export type Colors = "light" | "dark";
+export type Colors = "dark";
 
 export default {
-    paletteColor,
-    light: {
-        text: "#111827",
-        background: "#FFFFFF",
-        tint: tintColorLight,
-        tabIconDefault: "#ccc",
-        tabIconSelected: tintColorLight,
-    },
     dark: {
         text: "#FFFFFF",
         background: "#111827",
-        tint: tintColorDark,
+        tint: "#EF4444",
         tabIconDefault: "#ccc",
-        tabIconSelected: tintColorDark,
+        tabIconSelected: "#EF4444",
+        chatbotBackground: paletteColor.b600,
+        chatbotText: paletteColor.b100,
+        white: "#FFFFFF",
+        black: "#000000",
+        placeholder: "#888",
+        textinputBackground: paletteColor.b700,
     },
 };

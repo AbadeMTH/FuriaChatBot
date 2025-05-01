@@ -6,19 +6,36 @@ import { ChatInput } from "@/components/chat/ChatInput";
 import { Message } from "@/components/chat/chatUtils/mocks";
 import { useRef, useState } from "react";
 import { findResponse } from "@/components/chat/chatUtils/findResponse";
-import Colors from "@/constants/Colors";
 
 export default function ChatScreen() {
     const [messages, setMessages] = useState<Message[]>([]);
     const flatlistRef = useRef<FlatList>(null);
 
-    const handleSendMessage = (text: string, isUser: boolean) => {
+    function getActualTime() {
+        const date = new Date();
+        const actualTimeBrasilia = new Intl.DateTimeFormat("pt-BR", {
+            timeZone: "America/Sao_Paulo",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false,
+        }).format(date);
+
+        return actualTimeBrasilia;
+    }
+
+    function scrollListToBottom() {
+        setTimeout(() => {
+            flatlistRef.current?.scrollToEnd({ animated: true });
+        }, 100);
+    }
+
+    function handleSendMessage(text: string, isUser: boolean) {
         const newMessage: Message = {
             id: messages.length + 1,
             text,
             isUser,
+            time: getActualTime(),
         };
-
         //Adiciona a mensagem do usuário à lista de mensagens
         setMessages((prev) => [...prev, newMessage]);
 
@@ -32,11 +49,23 @@ export default function ChatScreen() {
                         id: messages.length + 2,
                         text: botResponse || "Desculpe, não entendi.",
                         isUser: false,
+                        time: getActualTime(),
                     },
                 ]);
             }, 500);
         }
-    };
+    }
+
+    //Renderiza cada item da lista de mensagens de forma performática
+    function renderItem({ item }: { item: Message }) {
+        return (
+            <MessageBox
+                message={item.text}
+                isUser={item.isUser}
+                time={item.time}
+            />
+        );
+    }
     return (
         <View style={styles.container}>
             <KeyboardAvoidingView
@@ -54,16 +83,9 @@ export default function ChatScreen() {
                     <FlatList
                         ref={flatlistRef}
                         data={messages}
-                        renderItem={({ item }) => (
-                            <MessageBox
-                                message={item.text}
-                                isUser={item.isUser}
-                            />
-                        )}
+                        renderItem={renderItem}
                         keyExtractor={(item) => item.id.toString()}
-                        onContentSizeChange={() =>
-                            flatlistRef.current?.scrollToEnd({ animated: true })
-                        }
+                        onContentSizeChange={scrollListToBottom}
                         contentContainerStyle={styles.listContentStyle}
                     />
                 )}
@@ -91,7 +113,6 @@ const styles = StyleSheet.create({
     messageEmptyChat: {
         fontSize: 20,
         fontWeight: "bold",
-        color: Colors.light.text,
         textAlign: "center",
     },
     listContentStyle: {
