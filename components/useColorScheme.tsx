@@ -1,4 +1,4 @@
-import { useTheme } from "./themeToggleButton/ThemeContext";
+import { useTheme } from "@/theme/ThemeContext";
 
 export function useColorScheme() {
     const { theme } = useTheme();

@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { Text, View } from "../Themed";
-import { StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import { Text, TextInput, TouchableOpacity, View } from "../Themed";
+import { StyleSheet } from "react-native";
 import Colors from "@/constants/Colors";
 import { FontAwesome } from "@expo/vector-icons";
+import { useTheme } from "@/theme/ThemeContext";
 
 type Props = {
     onSendMessage: (text: string, isUser: boolean) => void;
 };
 
 export function ChatInput({ onSendMessage }: Props) {
+    const {theme} = useTheme();
     const [disabled, setDisabled] = useState(false);
     const [input, setInput] = useState("");
     function handleSend() {
@@ -25,18 +27,22 @@ export function ChatInput({ onSendMessage }: Props) {
         <View style={styles.container}>
             <TextInput
                 placeholder="Digite sua mensagem..."
-                placeholderTextColor={Colors.dark.placeholder}
+                placeholderTextColor={theme === "light" ? '#000' : "#FFF"}
                 value={input}
                 onChangeText={(text) => setInput(text)}
                 multiline={false}
-                style={styles.textInput}
+                style={[styles.textInput, {color: theme === "light" ? '#000' : "#FFF"}]}
+                darkColor="textinputBackground"
+                lightColor="textinputBackground"
             />
             <TouchableOpacity
                 style={styles.sendMessageButton}
                 disabled={disabled}
                 onPress={handleSend}
+                darkColor="textinputBackground"
+                lightColor="textinputBackground"
             >
-                <FontAwesome size={20} name='send-o' color={Colors.dark.text}/>
+                <FontAwesome size={20} name="send-o" color={theme === "light" ? '#000' : "#FFF"} />
             </TouchableOpacity>
         </View>
     );
@@ -53,12 +59,10 @@ const styles = StyleSheet.create({
     },
     textInput: {
         borderRadius: 50,
-        backgroundColor: Colors.dark.textinputBackground,
         width: "84%",
         paddingLeft: 15,
         paddingTop: 15,
         paddingBottom: 15,
-        color: Colors.dark.text,
     },
     sendMessageButton: {
         width: "10%",
@@ -67,6 +71,5 @@ const styles = StyleSheet.create({
         alignItems: "center",
         borderRadius: 100,
         marginHorizontal: "2%",
-        backgroundColor: Colors.dark.textinputBackground,
     },
 });

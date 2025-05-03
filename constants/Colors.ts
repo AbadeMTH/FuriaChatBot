@@ -1,5 +1,5 @@
 export type Colors = "light" | "dark";
-const paletteColor = {
+export const paletteColor = {
     r50: "#FEF2F2",
     r100: "#FEE2E2",
     r200: "#FECACA",
@@ -36,7 +36,7 @@ export default {
         white: "#FFFFFF",
         black: "#000000",
         placeholder: "#888",
-        textinputBackground: paletteColor.b700,
+        textinputBackground: paletteColor.b600,
         iconBackgroundColor: "#FFFFFF",
         boxMessageUserBackground: paletteColor.r500,
         textMessage: "#FFFFFF"
@@ -52,7 +52,7 @@ export default {
         white: "#FFFFFF",
         black: "#000000",
         placeholder: "#888",
-        textinputBackground: paletteColor.b700,
+        textinputBackground: paletteColor.b300,
         iconBackgroundColor: paletteColor.b500,
         boxMessageUserBackground: paletteColor.r500,
         textMessage: "#FFFFFF"

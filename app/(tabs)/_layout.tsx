@@ -4,7 +4,7 @@ import { Tabs } from "expo-router";
 
 import { useColorScheme } from "@/components/useColorScheme";
 import Colors from "@/constants/Colors";
-import { ThemeToggleButton } from "@/components/themeToggleButton/ThemeToggleButton";
+import { ThemeToggleButton } from "@/theme/ThemeToggleButton";
 
 //Função que renderiza um ícone na barra de navegação
 function TabBarIcon(props: {
@@ -26,7 +26,7 @@ export default function TabLayout() {
                     borderTopWidth: 1,
                     height: 60,
                 },
-                headerRight: () => (<ThemeToggleButton/>),
+                headerRight: () => <ThemeToggleButton />,
             }}
         >
             <Tabs.Screen
