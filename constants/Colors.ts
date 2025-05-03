@@ -24,7 +24,7 @@ const paletteColor = {
     black: "#000000",
 };
 
-export const themeColors = {
+export default {
     dark: {
         text: "#FFFFFF",
         background: "#111827",
@@ -39,9 +39,10 @@ export const themeColors = {
         textinputBackground: paletteColor.b700,
         iconBackgroundColor: "#FFFFFF",
         boxMessageUserBackground: paletteColor.r500,
+        textMessage: "#FFFFFF"
     },
     light: {
-        text: "#FFFFFF",
+        text: paletteColor.b900,
         background: paletteColor.b50,
         tint: "#EF4444",
         tabIconDefault: "#ccc",
@@ -54,10 +55,7 @@ export const themeColors = {
         textinputBackground: paletteColor.b700,
         iconBackgroundColor: paletteColor.b500,
         boxMessageUserBackground: paletteColor.r500,
+        textMessage: "#FFFFFF"
     },
 };
 
-export type ColorPalette = typeof themeColors.dark &
-    typeof themeColors.light &
-    typeof paletteColor;
-export type ColorPaletteKeys = keyof ColorPalette;

@@ -1,18 +1,18 @@
 import { Text as RNText, View as RNView } from "react-native";
 import { useColorScheme } from "./useColorScheme";
-import { ColorPaletteKeys, Colors} from "@/constants/Colors";
+import Colors from "@/constants/Colors";
 
 export type ThemeProps = {
-    lightColor?: string;
-    darkColor?: string;
+    lightColor?: keyof typeof Colors.light;
+    darkColor?: keyof typeof Colors.dark;
 };
 
 export type TextProps = ThemeProps & RNText["props"];
 export type ViewProps = ThemeProps & RNView["props"];
 
 export function useThemeColor(
-    props: { light?: string; dark?: string},
-    colorName: ColorPaletteKeys
+    props: { light?: string; dark?: string },
+    colorName: keyof typeof Colors.dark & keyof typeof Colors.light
 ) {
     const theme = useColorScheme();
     const colorFromProps = props[theme];
@@ -20,13 +20,19 @@ export function useThemeColor(
     if (colorFromProps) {
         return colorFromProps;
     } else {
-        return ColorPaletteKeys;
+        return Colors[theme][colorName];
     }
 }
 
 export function Text(props: TextProps) {
     const { style, lightColor, darkColor, ...otherProps } = props;
-    const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
+    const color = useThemeColor(
+        {
+            light: Colors.light[lightColor ?? "text"],
+            dark: Colors.dark[darkColor ?? "text"],
+        },
+        "text"
+    );
 
     return <RNText style={[{ color }, style]} {...otherProps} />;
 }
@@ -34,7 +40,10 @@ export function Text(props: TextProps) {
 export function View(props: ViewProps) {
     const { style, lightColor, darkColor, ...otherProps } = props;
     const backgroundColor = useThemeColor(
-        { light: lightColor, dark: darkColor },
+        {
+            light: Colors.light[lightColor ?? "background"],
+            dark: Colors.dark[darkColor ?? "background"],
+        },
         "background"
     );
 

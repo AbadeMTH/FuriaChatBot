@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, ThemeProps, useThemeColor, View } from "../Themed";
+import { Text, ThemeProps, View } from "../Themed";
 import { Image, StyleSheet } from "react-native";
 interface props extends ThemeProps {
     message: string;
@@ -8,10 +8,6 @@ interface props extends ThemeProps {
 }
 
 export function MessageBox(props: props) {
-    const color = useThemeColor(
-        { light: props.lightColor, dark: props.darkColor },
-        "iconBackgroundColor"
-    );
     return (
         <View
             style={[
@@ -25,15 +21,21 @@ export function MessageBox(props: props) {
                     darkColor="boxMessageUserBackground"
                     style={styles.boxMessageUser}
                 >
-                    <Text style={styles.boxTextUser}>{props.message}</Text>
+                    <Text
+                        darkColor="textMessage"
+                        lightColor="textMessage"
+                        style={styles.boxTextUser}
+                    >
+                        {props.message}
+                    </Text>
                     <View
                         lightColor="boxMessageUserBackground"
                         darkColor="boxMessageUserBackground"
                         style={styles.boxTimeChat}
                     >
                         <Text
-                            darkColor="text"
-                            lightColor="text"
+                            darkColor="textMessage"
+                            lightColor="textMessage"
                             style={styles.textTimeChat}
                         >
                             {props.time}
@@ -53,16 +55,26 @@ export function MessageBox(props: props) {
                         />
                     </View>
 
-                    <View style={styles.boxMessageChat}>
-                        <Text style={styles.boxTextChat}>{props.message}</Text>
+                    <View
+                        darkColor="chatbotBackground"
+                        lightColor="chatbotBackground"
+                        style={styles.boxMessageChat}
+                    >
+                        <Text
+                            darkColor="textMessage"
+                            lightColor="textMessage"
+                            style={styles.boxTextChat}
+                        >
+                            {props.message}
+                        </Text>
                         <View
                             darkColor="chatbotBackground"
                             lightColor="chatbotBackground"
                             style={styles.boxTimeChat}
                         >
                             <Text
-                                darkColor="text"
-                                lightColor="text"
+                                darkColor="textMessage"
+                                lightColor="textMessage"
                                 style={styles.textTimeChat}
                             >
                                 {props.time}
