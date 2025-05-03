@@ -1,14 +1,17 @@
 import React from "react";
-import { Text, View } from "../Themed";
+import { Text, ThemeProps, useThemeColor, View } from "../Themed";
 import { Image, StyleSheet } from "react-native";
-import Colors from "@/constants/Colors";
-type props = {
+interface props extends ThemeProps {
     message: string;
     time: string;
     isUser: boolean;
-};
+}
 
 export function MessageBox(props: props) {
+    const color = useThemeColor(
+        { light: props.lightColor, dark: props.darkColor },
+        "iconBackgroundColor"
+    );
     return (
         <View
             style={[
@@ -17,20 +20,33 @@ export function MessageBox(props: props) {
             ]}
         >
             {props.isUser ? (
-                <View style={styles.boxMessageUser}>
+                <View
+                    lightColor="boxMessageUserBackground"
+                    darkColor="boxMessageUserBackground"
+                    style={styles.boxMessageUser}
+                >
                     <Text style={styles.boxTextUser}>{props.message}</Text>
                     <View
-                        style={[
-                            styles.boxTimeChat,
-                            { backgroundColor: Colors.dark.tint },
-                        ]}
+                        lightColor="boxMessageUserBackground"
+                        darkColor="boxMessageUserBackground"
+                        style={styles.boxTimeChat}
                     >
-                        <Text style={styles.textTimeChat}>{props.time}</Text>
+                        <Text
+                            darkColor="text"
+                            lightColor="text"
+                            style={styles.textTimeChat}
+                        >
+                            {props.time}
+                        </Text>
                     </View>
                 </View>
             ) : (
-                <View style={{ flexDirection: "row", alignItems: "flex-end" }}>
-                    <View style={styles.iconMessageChatContainer}>
+                <View style={styles.containerBot}>
+                    <View
+                        darkColor="iconBackgroundColor"
+                        lightColor="iconBackgroundColor"
+                        style={styles.iconMessageChatContainer}
+                    >
                         <Image
                             source={require("../../assets/images/logo-furia.png")}
                             style={styles.iconMessageChat}
@@ -39,8 +55,16 @@ export function MessageBox(props: props) {
 
                     <View style={styles.boxMessageChat}>
                         <Text style={styles.boxTextChat}>{props.message}</Text>
-                        <View style={styles.boxTimeChat}>
-                            <Text style={styles.textTimeChat}>
+                        <View
+                            darkColor="chatbotBackground"
+                            lightColor="chatbotBackground"
+                            style={styles.boxTimeChat}
+                        >
+                            <Text
+                                darkColor="text"
+                                lightColor="text"
+                                style={styles.textTimeChat}
+                            >
                                 {props.time}
                             </Text>
                         </View>
@@ -65,7 +89,6 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
     },
     boxMessageUser: {
-        backgroundColor: Colors.dark.tint,
         borderRadius: 10,
         padding: 10,
         maxWidth: "80%",
@@ -74,7 +97,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     iconMessageChatContainer: {
-        backgroundColor: "#FFFFFF",
         borderRadius: 50,
         marginRight: 10,
         padding: 2,
@@ -84,7 +106,6 @@ const styles = StyleSheet.create({
         height: 20,
     },
     boxMessageChat: {
-        backgroundColor: Colors.dark.chatbotBackground,
         borderRadius: 10,
         padding: 10,
         maxWidth: "80%",
@@ -95,11 +116,13 @@ const styles = StyleSheet.create({
     boxTimeChat: {
         justifyContent: "flex-end",
         alignItems: "flex-end",
-        backgroundColor: Colors.dark.chatbotBackground,
     },
     textTimeChat: {
         fontSize: 10,
-        color: Colors.dark.text,
         marginTop: 5,
+    },
+    containerBot: {
+        flexDirection: "row",
+        alignItems: "flex-end",
     },
 });

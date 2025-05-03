@@ -1,3 +1,4 @@
+export type Colors = "light" | "dark";
 const paletteColor = {
     r50: "#FEF2F2",
     r100: "#FEE2E2",
@@ -23,9 +24,7 @@ const paletteColor = {
     black: "#000000",
 };
 
-export type Colors = "light" | "dark";
-
-export default {
+export const themeColors = {
     dark: {
         text: "#FFFFFF",
         background: "#111827",
@@ -38,9 +37,11 @@ export default {
         black: "#000000",
         placeholder: "#888",
         textinputBackground: paletteColor.b700,
+        iconBackgroundColor: "#FFFFFF",
+        boxMessageUserBackground: paletteColor.r500,
     },
     light: {
-        text: paletteColor.b900,
+        text: "#FFFFFF",
         background: paletteColor.b50,
         tint: "#EF4444",
         tabIconDefault: "#ccc",
@@ -51,5 +52,12 @@ export default {
         black: "#000000",
         placeholder: "#888",
         textinputBackground: paletteColor.b700,
-    }
+        iconBackgroundColor: paletteColor.b500,
+        boxMessageUserBackground: paletteColor.r500,
+    },
 };
+
+export type ColorPalette = typeof themeColors.dark &
+    typeof themeColors.light &
+    typeof paletteColor;
+export type ColorPaletteKeys = keyof ColorPalette;

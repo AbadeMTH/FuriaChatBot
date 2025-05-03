@@ -13,11 +13,6 @@ export {
   ErrorBoundary,
 } from 'expo-router';
 
-// export const unstable_settings = {
-//   // Ensure that reloading on `/modal` keeps a back button present.
-//   initialRouteName: '(tabs)',
-// };
-
 //Previne que a splash screen seja escondida automaticamente até que o app esteja pronto
 SplashScreen.preventAutoHideAsync();
 

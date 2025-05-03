@@ -2,8 +2,9 @@ import React from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs } from "expo-router";
 
-import Colors from "@/constants/Colors";
+
 import { useColorScheme } from "@/components/useColorScheme";
+import { colors } from "@/constants/Colors";
 
 //Função que renderiza um ícone na barra de navegação
 function TabBarIcon(props: {
@@ -19,7 +20,7 @@ export default function TabLayout() {
     return (
         <Tabs
             screenOptions={{
-                tabBarActiveTintColor: Colors[colorScheme].tint,
+                tabBarActiveTintColor: colors[colorScheme].tint,
                 headerShown: true,
                 tabBarStyle: {
                     borderTopWidth: 1,
