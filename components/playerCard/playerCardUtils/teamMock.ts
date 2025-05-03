@@ -1,10 +1,12 @@
+import { ImageSourcePropType } from "react-native";
+
 export interface TeamMember {
     id: number;
     nickname: string;
     fullName: string;
     country: string;
     role: string;
-    imageUrl: string;
+    imageUrl: ImageSourcePropType;
 }
 
 export const furiaTeam: TeamMember[] = [
@@ -13,9 +15,8 @@ export const furiaTeam: TeamMember[] = [
         nickname: "FalleN",
         fullName: "Gabriel Toledo",
         country: "Brasil",
-        role: "AWPer / In-Game Leader",
-        imageUrl:
-            "https://www.instagram.com/fallen/p/DHiHQXLs42I/media/?size=l",
+        role: "AWPer / IGL",
+        imageUrl: require("../../../assets/images/players/fallen.webp"),
     },
     {
         id: 2,
@@ -23,8 +24,7 @@ export const furiaTeam: TeamMember[] = [
         fullName: "Kaike Cerato",
         country: "Brasil",
         role: "Rifler",
-        imageUrl:
-            "https://www.instagram.com/kscerato/p/CwX8b1pLxjY/media/?size=l",
+        imageUrl: require("../../../assets/images/players/kscerato.webp"),
     },
     {
         id: 3,
@@ -32,25 +32,23 @@ export const furiaTeam: TeamMember[] = [
         fullName: "Yuri Santos",
         country: "Brasil",
         role: "Rifler",
-        imageUrl: "https://www.alamy.com/stock-photo/yuri-santos.html",
+        imageUrl: require("../../../assets/images/players/yuri.webp"),
     },
     {
         id: 4,
-        nickname: "chelo",
-        fullName: "Marcelo Cespedes",
-        country: "Brasil",
-        role: "Entry Fragger",
-        imageUrl:
-            "https://www.instagram.com/chelok1ng/p/CwX8b1pLxjY/media/?size=l",
+        nickname: "molodoy",
+        fullName: "Danil Golubenko",
+        country: "Cazaquistão",
+        role: "AWPer",
+        imageUrl: require("../../../assets/images/players/molodoy.webp"),
     },
     {
         id: 5,
-        nickname: "skullz",
-        fullName: "Felipe Medeiros",
-        country: "Brasil",
-        role: "Anchor",
-        imageUrl:
-            "https://www.instagram.com/skullzcs/p/CwX8b1pLxjY/media/?size=l",
+        nickname: "YEKINDAR",
+        fullName: "Mareks Gaļinskis",
+        country: "Letônia",
+        role: "Rifler",
+        imageUrl: require("../../../assets/images/players/yekindar.webp"),
     },
     {
         id: 6,
@@ -58,7 +56,6 @@ export const furiaTeam: TeamMember[] = [
         fullName: "Sidnei Macedo",
         country: "Brasil",
         role: "Treinador Principal",
-        imageUrl:
-            "https://www.instagram.com/siddecs/p/CwX8b1pLxjY/media/?size=l",
+        imageUrl: require("../../../assets/images/players/sidde.webp"),
     },
 ];

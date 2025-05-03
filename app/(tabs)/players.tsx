@@ -6,7 +6,6 @@ export default function PlayersScreen() {
     return (
         <View style={styles.container}>
             <PlayerCardList />
-            <View style={styles.separator} />
         </View>
     );
 }

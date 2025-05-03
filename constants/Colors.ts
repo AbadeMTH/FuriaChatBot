@@ -39,7 +39,11 @@ export default {
         textinputBackground: paletteColor.b600,
         iconBackgroundColor: "#FFFFFF",
         boxMessageUserBackground: paletteColor.r500,
-        textMessage: "#FFFFFF"
+        textMessage: "#FFFFFF",
+        playerCardBackground: paletteColor.b800,
+        playerFullName: paletteColor.b500,
+        playerSubInfos: paletteColor.b500,
+        playerImageBackground: paletteColor.r500,
     },
     light: {
         text: paletteColor.b900,
@@ -55,7 +59,10 @@ export default {
         textinputBackground: paletteColor.b300,
         iconBackgroundColor: paletteColor.b500,
         boxMessageUserBackground: paletteColor.r500,
-        textMessage: "#FFFFFF"
+        textMessage: "#FFFFFF",
+        playerCardBackground: paletteColor.b800,
+        playerFullName: paletteColor.b500,
+        playerSubInfos: paletteColor.b500,
+        playerImageBackground: paletteColor.r500,
     },
 };
-
