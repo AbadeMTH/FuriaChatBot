@@ -1,13 +1,12 @@
 import { StyleSheet } from "react-native";
 import { Text, View } from "@/components/Themed";
+import { PlayerCardList } from "@/components/playerCard/PlayerCardList";
 
 export default function PlayersScreen() {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Tab Two</Text>
-            <View
-                style={styles.separator}
-            />
+            <PlayerCardList />
+            <View style={styles.separator} />
         </View>
     );
 }
