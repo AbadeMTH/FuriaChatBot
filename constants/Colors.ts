@@ -23,7 +23,7 @@ const paletteColor = {
     black: "#000000",
 };
 
-export type Colors = "dark";
+export type Colors = "light" | "dark";
 
 export default {
     dark: {
@@ -39,4 +39,17 @@ export default {
         placeholder: "#888",
         textinputBackground: paletteColor.b700,
     },
+    light: {
+        text: paletteColor.b900,
+        background: paletteColor.b50,
+        tint: "#EF4444",
+        tabIconDefault: "#ccc",
+        tabIconSelected: "#EF4444",
+        chatbotBackground: paletteColor.b600,
+        chatbotText: paletteColor.b100,
+        white: "#FFFFFF",
+        black: "#000000",
+        placeholder: "#888",
+        textinputBackground: paletteColor.b700,
+    }
 };
