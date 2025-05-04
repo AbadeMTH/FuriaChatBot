@@ -1,14 +1,12 @@
 import { StyleSheet } from "react-native";
 
 import { Text, View } from "@/components/Themed";
+import { ChampionshipsCardList } from "@/components/matches_championshipsCard/ChampionshipsCardList";
 
 export default function MatchesScreen() {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Tab Two</Text>
-            <View
-                style={styles.separator}
-            />
+            <ChampionshipsCardList />
         </View>
     );
 }

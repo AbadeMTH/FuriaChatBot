@@ -65,8 +65,8 @@ export function TouchableOpacity(props: TouchableOpacityProps){
     return <RNTouchableOpacity style={[{ backgroundColor }, style]} {...otherProps} />;
 }
 
-export function TextInput(porps: TextInputProps) {
-    const { style, lightColor, darkColor, ...otherProps } = porps;
+export function TextInput(props: TextInputProps) {
+    const { style, lightColor, darkColor, ...otherProps } = props;
     const backgroundColor = useThemeColor(
         {
             light: Colors.light[lightColor ?? "textinputBackground"],

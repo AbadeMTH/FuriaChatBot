@@ -27,7 +27,7 @@ export const paletteColor = {
 export default {
     dark: {
         text: "#FFFFFF",
-        background: "#111827",
+        background: paletteColor.b900,
         tint: "#EF4444",
         tabIconDefault: "#ccc",
         tabIconSelected: "#EF4444",
@@ -45,6 +45,8 @@ export default {
         playerSubInfos: paletteColor.b500,
         playerImageBackground: paletteColor.r500,
         separator: paletteColor.r500,
+        dateChampionship: paletteColor.b500,
+        backgroundMatch: paletteColor.b800,
     },
     light: {
         text: paletteColor.b900,
@@ -65,5 +67,9 @@ export default {
         playerFullName: paletteColor.b500,
         playerSubInfos: paletteColor.b500,
         playerImageBackground: paletteColor.r500,
+        backgroundChampionshipCard: paletteColor.b300,
+        dateChampionship: paletteColor.b500,
+        backgroundMatch: paletteColor.b300,
+        championShipTitle: paletteColor.b800,
     },
 };
