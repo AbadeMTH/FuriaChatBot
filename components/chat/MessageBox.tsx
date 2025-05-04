@@ -50,7 +50,7 @@ export function MessageBox(props: props) {
                         style={styles.iconMessageChatContainer}
                     >
                         <Image
-                            source={require("../../assets/images/logo-furia.png")}
+                            source={require("../../assets/images/teams/logo-furia.png")}
                             style={styles.iconMessageChat}
                         />
                     </View>

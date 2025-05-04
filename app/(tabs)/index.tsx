@@ -1,10 +1,14 @@
 import { StyleSheet } from "react-native";
-import { Text, View } from "@/components/Themed";
+import { View } from "@/components/Themed";
+import { Achievements } from "@/components/achievements/Achievements";
+import { ButtonNavigate } from "@/components/buttonNavigate/ButtonNavigate";
+import { AchievementsLists } from "@/components/achievements/AchievementsList";
 
 export default function HomeScreen() {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Home</Text>
+            <AchievementsLists />
+            
         </View>
     );
 }
@@ -14,9 +18,5 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-    },
-    title: {
-        fontSize: 20,
-        fontWeight: "bold",
     },
 });

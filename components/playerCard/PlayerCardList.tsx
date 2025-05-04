@@ -5,13 +5,11 @@ import { furiaTeam, TeamMember } from "./playerCardUtils/teamMock";
 import { PlayerCard } from "./PlayerCard";
 
 export function PlayerCardList() {
-    const players: TeamMember[] = furiaTeam.filter((data) => data.id != 6);
+    const players: TeamMember[] = furiaTeam.filter((data) => data.id <= 5);
     const coach: TeamMember | undefined = furiaTeam.find(
         (data) => data.id === 6
     );
-    const bench: TeamMember[] = furiaTeam.filter(
-        (data) => data.id === 7 || data.id === 8
-    );
+    const bench: TeamMember[] = furiaTeam.filter((data) => data.id >= 7);
     function renderItem({ item }: { item: TeamMember }) {
         return <PlayerCard {...item} />;
     }
@@ -29,7 +27,7 @@ export function PlayerCardList() {
                 <View style={styles.containerSeparator}>
                     <View
                         darkColor="separator"
-                        lightColor="black"
+                        lightColor="separator"
                         style={styles.separador}
                     />
                 </View>
@@ -50,7 +48,7 @@ export function PlayerCardList() {
                 <View style={styles.containerSeparator}>
                     <View
                         darkColor="separator"
-                        lightColor="black"
+                        lightColor="separator"
                         style={styles.separador}
                     />
                 </View>
@@ -68,7 +66,7 @@ export function PlayerCardList() {
                 <View style={styles.containerSeparator}>
                     <View
                         darkColor="separator"
-                        lightColor="black"
+                        lightColor="separator"
                         style={styles.separador}
                     />
                 </View>

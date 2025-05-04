@@ -6,9 +6,9 @@ import { paletteColor } from "@/constants/Colors";
 
 export function ChampionshipCard(props: Championships) {
     return (
-        <View lightColor="backgroundChampionshipCard" style={styles.container}>
+        <View  style={styles.container}>
             <View
-                lightColor="backgroundChampionshipCard"
+                
                 style={styles.championshipContainer}
             >
                 <Image

@@ -47,6 +47,7 @@ export default {
         separator: paletteColor.r500,
         dateChampionship: paletteColor.b500,
         backgroundMatch: paletteColor.b800,
+        backgroundButtonNavigate: paletteColor.b600,
     },
     light: {
         text: paletteColor.b900,
@@ -71,5 +72,7 @@ export default {
         dateChampionship: paletteColor.b500,
         backgroundMatch: paletteColor.b300,
         championShipTitle: paletteColor.b800,
+        separator: paletteColor.r500,
+        backgroundButtonNavigate: paletteColor.b300,
     },
 };

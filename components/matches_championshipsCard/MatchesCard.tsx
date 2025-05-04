@@ -6,23 +6,15 @@ import { paletteColor } from "@/constants/Colors";
 
 export function MatchesCard(props: Matches) {
     return (
-        <View
-            darkColor="backgroundMatch"
-            lightColor="backgroundMatch"
-            style={styles.container}
-        >
+        <View style={styles.container}>
             <Text
                 lightColor="championShipTitle"
                 style={styles.championshipName}
             >
                 {props.championship}
             </Text>
-            <View
-                darkColor="backgroundMatch"
-                lightColor="backgroundMatch"
-                style={styles.containerVS}
-            >
-                <View darkColor="backgroundMatch" lightColor="backgroundMatch">
+            <View style={styles.containerVS}>
+                <View>
                     <Image source={props.team1Image} style={styles.teamImage} />
                     <Text
                         lightColor="championShipTitle"
@@ -34,7 +26,7 @@ export function MatchesCard(props: Matches) {
                 <Text lightColor="championShipTitle" style={styles.textVS}>
                     VS
                 </Text>
-                <View darkColor="backgroundMatch" lightColor="backgroundMatch">
+                <View>
                     <Image source={props.team2Image} style={styles.teamImage} />
                     <Text
                         lightColor="championShipTitle"
@@ -44,7 +36,11 @@ export function MatchesCard(props: Matches) {
                     </Text>
                 </View>
             </View>
-            <Text darkColor="dateChampionship"lightColor="dateChampionship" style={styles.dateMatch}>
+            <Text
+                darkColor="dateChampionship"
+                lightColor="dateChampionship"
+                style={styles.dateMatch}
+            >
                 {props.dateMatch}
             </Text>
         </View>
@@ -60,9 +56,10 @@ const styles = StyleSheet.create({
         margin: 20,
         padding: 15,
         borderRadius: 10,
-        borderLeftWidth: 3,
         borderColor: paletteColor.r500,
         paddingLeft: 10,
+        borderWidth: 1,
+        elevation: 6,
     },
     teamImage: {
         width: 50,
@@ -88,7 +85,7 @@ const styles = StyleSheet.create({
     },
     dateMatch: {
         textAlign: "center",
-        fontStyle: 'italic',
+        fontStyle: "italic",
     },
     championshipName: {
         fontSize: 18,

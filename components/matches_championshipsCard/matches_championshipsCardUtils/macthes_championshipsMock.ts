@@ -44,8 +44,8 @@ export const matches: Matches[] = [
         imageChampionship: require("../../../assets/images/championships/pgl.webp"),
         team1: "FURIA",
         team2: "The MongolZ",
-        team1Image: require("../../../assets/images/logo-furia.png"),
-        team2Image: require("../../../assets/images/mongolz.webp"),
+        team1Image: require("../../../assets/images/teams/logo-furia.png"),
+        team2Image: require("../../../assets/images/teams/mongolz.webp"),
         dateMatch: '10 de Maio de 2025',
     },
 ];

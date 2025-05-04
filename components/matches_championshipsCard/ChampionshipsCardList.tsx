@@ -27,7 +27,7 @@ export function ChampionshipsCardList() {
                 <View style={styles.containerSeparator}>
                     <View
                         darkColor="separator"
-                        lightColor="black"
+                        lightColor="separator"
                         style={styles.separador}
                     />
                 </View>
@@ -48,7 +48,7 @@ export function ChampionshipsCardList() {
                 <View style={styles.containerSeparator}>
                     <View
                         darkColor="separator"
-                        lightColor="black"
+                        lightColor="separator"
                         style={styles.separador}
                     />
                 </View>
