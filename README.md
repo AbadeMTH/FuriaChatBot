@@ -67,10 +67,11 @@ Caso queiro utilizar seu dispositivo móvel para verificar o projeto?
 
 ## 📸 Imagens
 
-<img src="./assets/images/prints/homeDark.png" alt="Tela Home no tema Escuro" width="300"/> <img src="./assets/images/prints/homeLight.png" alt="Tela Home no tema Claro" width="300"/>
+<img src="./assets/images/prints/homeDark.png" alt="Tela Home no tema Escuro" width="300" style="margin-right: 10px; display: inline-block;"/>
+<img src="./assets/images/prints/homeLight.png" alt="Tela Home no tema Claro" width="300" style="margin-left: 10px; display: inline-block;"/>
 
-<img src="./assets/images/prints/chatEmptyDark.png" alt="Chat Vazio no tema Escuro" width="300"/>
-<img src="./assets/images/prints/chatDark.png" alt="Chat no tema Escuro" width="300"/>
+<img src="./assets/images/prints/chatEmptyDark.png" alt="Chat Vazio no tema Escuro" width="300" style="margin-right: 10px; display: inline-block;"/>
+<img src="./assets/images/prints/chatDark.png" alt="Chat no tema Escuro" width="300" style="margin-left: 10px; display: inline-block;"/>
 
 ## 👨‍💻 Autor
 
