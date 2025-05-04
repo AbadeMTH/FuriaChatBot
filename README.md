@@ -80,8 +80,8 @@ Caso queiro utilizar seu dispositivo móvel para verificar o projeto?
 
 <table>
   <tr>
-    <td align="center"><img src="./assets/images/prints/chatEmptyDark.png" width="300" alt="Chat Vazio"/></td>
-    <td align="center"><img src="./assets/images/prints/chatDark.png" width="300" alt="Chat"/></td>
+    <td align="center"><img src="./assets/images/prints/chatEmptyDark.png" width="300" alt="Chat Vazio Escuro"/></td>
+    <td align="center"><img src="./assets/images/prints/chatDark.png" width="300" alt="Chat Escuro"/></td>
   </tr>
 </table>
 
@@ -94,7 +94,7 @@ Caso queiro utilizar seu dispositivo móvel para verificar o projeto?
   </tr>
 </table>
 
-### Tela de Eventos
+### Prints da Tela Eventos em ambos Temas
 
 <table>
   <tr>
@@ -103,7 +103,7 @@ Caso queiro utilizar seu dispositivo móvel para verificar o projeto?
   </tr>
 </table>
 
-### Line-Up
+### Prints da Tela Line-Up em ambos Temas
 
 <table>
   <tr>
