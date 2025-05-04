@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View } from "../Themed";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, ImageBackground, StyleSheet } from "react-native";
 import {
     achievements,
     AchievementsType,
@@ -16,19 +16,42 @@ export function AchievementsLists() {
     function renderHeaderItem() {
         return (
             <View style={styles.containerHeader}>
-                <Text style={styles.bemVindo}>Bem-Vindo à Pantera Móvel!</Text>
-                <ButtonNavigate
-                    path="(tabs)/chat"
-                    title="Navegar para o Chat"
-                />
-                <ButtonNavigate
-                    path="(tabs)/matches"
-                    title="Visualizar próximos eventos"
-                />
-                <ButtonNavigate
-                    path="(tabs)/players"
-                    title="Ver a Line-Up Furiosa"
-                />
+                <ImageBackground
+                    imageStyle={styles.imageFuriaBackground}
+                    source={require("../../assets/images/teams/logo-furia.png")}
+                    style={styles.furiaBackground}
+                >
+                    <Text style={styles.bemVindo}>
+                        Bem-Vindo(a) à Pantera Móvel!
+                    </Text>
+
+                    <ButtonNavigate
+                        path="(tabs)/chat"
+                        title="Navegar para o Chat Furioso"
+                    />
+                    <ButtonNavigate
+                        path="(tabs)/matches"
+                        title="Visualizar próximos eventos da FURIA"
+                    />
+                    <ButtonNavigate
+                        path="(tabs)/players"
+                        title="Ver a Line-Up Furiosa"
+                    />
+                </ImageBackground>
+                <Text
+                    darkColor="text"
+                    lightColor="text"
+                    style={styles.categoryTitle}
+                >
+                    Conquistas da Pantera!
+                </Text>
+                <View style={styles.containerSeparator}>
+                    <View
+                        darkColor="separator"
+                        lightColor="separator"
+                        style={styles.separador}
+                    />
+                </View>
             </View>
         );
     }
@@ -56,12 +79,43 @@ const styles = StyleSheet.create({
     },
     containerHeader: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: 20,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 20,
     },
     bemVindo: {
         fontSize: 20,
-        fontWeight: 'bold',
+        fontWeight: "bold",
+        marginBottom: 10,
+    },
+    furiaBackground: {
+        flex: 1,
+        width: "100%",
+        paddingBottom: 20,
+        alignItems: "center",
+    },
+    imageFuriaBackground: {
+        opacity: 0.2,
+        resizeMode: "contain",
+    },
+    categoryTitle: {
+        width: "100%",
+        fontSize: 26,
+        fontWeight: "bold",
+        textAlign: "center",
+        marginTop: "5%",
+    },
+    containerSeparator: {
+        width: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    separador: {
+        height: 1,
+        width: "90%",
+        opacity: 0.5,
+        borderRadius: 10,
+        alignSelf: "center",
+        marginTop: 10,
     },
 });

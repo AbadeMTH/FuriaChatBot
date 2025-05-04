@@ -8,7 +8,6 @@ export default function HomeScreen() {
     return (
         <View style={styles.container}>
             <AchievementsLists />
-            
         </View>
     );
 }

@@ -41,11 +41,12 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         alignItems: "center",
         marginLeft: "10%",
-        marginVertical: "10%",
+        marginVertical: "5%",
         borderRadius: 30,
         borderWidth: 1,
         borderColor: paletteColor.r500,
         padding: 10,
+        elevation: 6,
     },
     teamImage: {
         width: 50,

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Text, TextInput, TouchableOpacity, View } from "../Themed";
-import { StyleSheet } from "react-native";
-import Colors from "@/constants/Colors";
+import { Text, TextInput, TouchableOpacity, View} from "../Themed";
+import { StyleSheet, View as RNView } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { useTheme } from "@/theme/ThemeContext";
 
@@ -24,7 +23,8 @@ export function ChatInput({ onSendMessage }: Props) {
     }
 
     return (
-        <View style={styles.container}>
+        //View padrão do React Native utilizada para não atrapalhar na visualização da logo da furia
+        <RNView style={styles.container}>
             <TextInput
                 placeholder="Digite sua mensagem..."
                 placeholderTextColor={theme === "light" ? '#000' : "#FFF"}
@@ -44,7 +44,7 @@ export function ChatInput({ onSendMessage }: Props) {
             >
                 <FontAwesome size={20} name="send-o" color={theme === "light" ? '#000' : "#FFF"} />
             </TouchableOpacity>
-        </View>
+        </RNView>
     );
 }
 

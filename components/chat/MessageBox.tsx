@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, ThemeProps, View } from "../Themed";
-import { Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, View as RNView } from "react-native";
 interface props extends ThemeProps {
     message: string;
     time: string;
@@ -9,7 +9,8 @@ interface props extends ThemeProps {
 
 export function MessageBox(props: props) {
     return (
-        <View
+        //View padrão do React Native utilizada para não atrapalhar na visualização da logo da furia
+        <RNView
             style={[
                 styles.containerChatbot,
                 props.isUser ? styles.alignRight : styles.alignLeft,
@@ -43,7 +44,7 @@ export function MessageBox(props: props) {
                     </View>
                 </View>
             ) : (
-                <View style={styles.containerBot}>
+                <RNView style={styles.containerBot}>
                     <View
                         darkColor="iconBackgroundColor"
                         lightColor="iconBackgroundColor"
@@ -81,9 +82,9 @@ export function MessageBox(props: props) {
                             </Text>
                         </View>
                     </View>
-                </View>
+                </RNView>
             )}
-        </View>
+        </RNView>
     );
 }
 

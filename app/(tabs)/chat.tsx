@@ -1,4 +1,10 @@
-import { FlatList, KeyboardAvoidingView, StyleSheet } from "react-native";
+import {
+    FlatList,
+    ImageBackground,
+    KeyboardAvoidingView,
+    StyleSheet,
+    View as RNView
+} from "react-native";
 
 import { Text, View } from "@/components/Themed";
 import { MessageBox } from "@/components/chat/MessageBox";
@@ -36,10 +42,9 @@ export default function ChatScreen() {
             isUser,
             time: getActualTime(),
         };
-        //Adiciona a mensagem do usuário à lista de mensagens
+
         setMessages((prev) => [...prev, newMessage]);
 
-        //Resposta do bot baseada na mensagem do usuário após um pequeno delay e adiciona à lista de mensagens
         if (isUser) {
             const botResponse = findResponse(text);
             setTimeout(() => {
@@ -56,7 +61,6 @@ export default function ChatScreen() {
         }
     }
 
-    //Renderiza cada item da lista de mensagens de forma performática
     function renderItem({ item }: { item: Message }) {
         return (
             <MessageBox
@@ -66,19 +70,25 @@ export default function ChatScreen() {
             />
         );
     }
+
     return (
-        <View style={styles.container}>
+        <ImageBackground
+            source={require("../../assets/images/teams/logo-furia.png")}
+            style={styles.background}
+            imageStyle={styles.imageStyle}
+        >
             <KeyboardAvoidingView
-                style={{ flex: 1 }}
+                style={styles.container}
                 behavior="padding"
                 keyboardVerticalOffset={90}
             >
                 {messages.length === 0 ? (
-                    <View style={styles.messageEmptyChatBox}>
-                        <Text style={styles.messageEmptyChat}>
+                    //View padrão do React Native utilizada para não atrapalhar na visualização da logo da furia
+                    <RNView style={styles.messageEmptyChatBox}>
+                        <Text darkColor="text" lightColor="black" style={styles.messageEmptyChat}>
                             Digite sua primeira mensagem meu furioso!
                         </Text>
-                    </View>
+                    </RNView>
                 ) : (
                     <FlatList
                         ref={flatlistRef}
@@ -91,19 +101,21 @@ export default function ChatScreen() {
                 )}
                 <ChatInput onSendMessage={handleSendMessage} />
             </KeyboardAvoidingView>
-        </View>
+        </ImageBackground>
     );
 }
 
 const styles = StyleSheet.create({
+    background: {
+        flex: 1,
+    },
+    imageStyle: {
+        resizeMode: "contain",
+        opacity: 0.2,
+    },
     container: {
         flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    title: {
-        fontSize: 20,
-        fontWeight: "bold",
+        paddingHorizontal: 10,
     },
     messageEmptyChatBox: {
         flex: 1,
@@ -114,6 +126,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: "bold",
         textAlign: "center",
+        color: "white",
     },
     listContentStyle: {
         paddingBottom: 20,

@@ -19,7 +19,7 @@ export function ButtonNavigate(props: Props) {
                 style={styles.container}
                 onPress={() => router.push(props.path as any)}
             >
-                <Text>{props.title}</Text>
+                <Text style={styles.title}>{props.title}</Text>
             </TouchableOpacity>
         </>
     );
@@ -31,9 +31,13 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         width: "80%",
-        marginLeft: "10%",
         padding: 20,
         borderRadius: 30,
-        margin: 20,
+        margin: 10,
+        elevation: 6,
+    },
+    title: {
+        fontSize: 14,
+        fontWeight: 'bold'
     },
 });

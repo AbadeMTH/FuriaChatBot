@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "../Themed";
 import { TeamMember } from "./playerCardUtils/teamMock";
-import { Image, StyleSheet } from "react-native";
+import { Image, ImageBackground, StyleSheet } from "react-native";
 
 export function PlayerCard(props: TeamMember) {
     return (
@@ -15,7 +15,13 @@ export function PlayerCard(props: TeamMember) {
                 lightColor="playerImageBackground"
                 style={styles.imageContainer}
             >
-                <Image source={props.imageUrl} style={styles.image} />
+                <ImageBackground
+                    style={styles.backgroundImage}
+                    source={require("../../assets/images/teams/logo-furia.png")}
+                    imageStyle={styles.logoFuriaBackground}
+                >
+                    <Image source={props.imageUrl} style={styles.image} />
+                </ImageBackground>
             </View>
             <View
                 darkColor="playerCardBackground"
@@ -146,6 +152,7 @@ const styles = StyleSheet.create({
         borderTopStartRadius: 30,
         justifyContent: "center",
         alignItems: "center",
+        height: 200,
     },
     image: {
         width: 200,
@@ -161,7 +168,7 @@ const styles = StyleSheet.create({
     infos: {
         flexDirection: "row",
         width: "100%",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
     },
     nickname: {
         fontSize: 20,
@@ -179,5 +186,19 @@ const styles = StyleSheet.create({
     subinfo: {
         fontSize: 14,
         fontStyle: "italic",
+    },
+    backgroundImage: {
+        width: "100%",
+        height: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+
+    logoFuriaBackground: {
+        opacity: 0.2,
+        resizeMode: "contain",
+        position: "absolute",
+        width: "100%",
+        height: "100%",
     },
 });
