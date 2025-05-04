@@ -32,7 +32,7 @@ Instale o Java SDK (versão 17):
 Escolha uma das opções para rodar o app:
 
 -   Emulador Android: [Android Studio](https://developer.android.com/studio?hl=pt-br)
--   Dispositivo físico: [Expo Go (Android)](https://play.google.com/store/apps/details?id=host.exp.exponent&pcampaignid=web_share)
+-   Dispositivo físico: [Expo Go SDK 52 (Android)](https://expo.dev/go)
 
 ⚙️ Siga este guia de configuração:  
 👉 [Configuração do Ambiente React Native](https://reactnative.dev/docs/set-up-your-environment)
@@ -63,7 +63,11 @@ npm run android #Irá iniciar o Metro e abrirá o emulador caso configurado corr
 Caso queiro utilizar seu dispositivo móvel para verificar o projeto?
 
 -   Abra o aplicativo Expo Go no celular, e escaneie o QR Code gerado pelo Metro
-    > Certifique-se de ter o [Expo Go](https://expo.dev/client) instalado no seu celular para testar o app via QR Code.
+    > Certifique-se de ter o [Expo Go SDK 52](https://expo.dev/client) instalado no seu celular para testar o app via QR Code.
+
+## OBSERVAÇÕES
+O aplicativo foi desenvolvido e testado APENAS em dispositivos ANDROIDS!
+O Expo Go deve ser instalado baseado na sua versão da SDK 52!
 
 ## 📸 Imagens
 

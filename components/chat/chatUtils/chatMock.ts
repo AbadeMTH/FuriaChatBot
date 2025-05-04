@@ -13,14 +13,48 @@ type KeywordResponse = {
 
 export const furiaKeywords: KeywordResponse[] = [
     {
-        keywords: ["oi", "ola", "olá", "eae", "fala", "eai", "iai", "salve", "iae"],
+        keywords: [
+            "oi",
+            "ola",
+            "olá",
+            "eae",
+            "fala",
+            "eai",
+            "iai",
+            "salve",
+            "iae",
+        ],
         response:
             "Fala, fã da FURIA! 😎 Pronto pra saber tudo sobre a line de CS2 e os próximos campeonatos?",
+    },
+    {
+        keywords: ["tchau", "adeus", "falou", "até mais"],
+        response: "Valeu, fã da FURIA! Até a próxima! 🐾",
+    },
+    {
+        keywords: ["de boa", "tudo bem", "voce ta bem", "você ta bem"],
+        response: "Tudo na paz por aqui, na selva a pantera comanda 😎",
     },
     {
         keywords: ["sim", "bora", "fala", "vamos", "vamo", "claro"],
         response:
             "Perfeito meu panterão 🐾, pergunte o que quiser e tentarei responder!",
+    },
+    {
+        keywords: [
+            "redes",
+            "sociais",
+            "instagram",
+            "twitter",
+            "x",
+            "tiktok",
+            "youtube",
+            "canal",
+            "fotos",
+            "videos",
+        ],
+        response:
+            "Quer acompanhar a FURIA mais de perto? 🐾 Segue eles nas redes sociais:\n\n📸 Instagram: \nhttps://www.instagram.com/furiagg/\n\n🐦 Twitter/X: \nhttps://x.com/FURIA\n\n🎥 YouTube: \nhttps://www.youtube.com/@FURIAgg/featured\n\n🎵 TikTok: \nhttps://www.tiktok.com/@furia\n\nÉ só seguir e ficar por dentro de tudo!",
     },
     {
         keywords: ["furia", "fúria", "sobre a furia", "quem é a furia"],
@@ -65,7 +99,7 @@ export const furiaKeywords: KeywordResponse[] = [
     {
         keywords: ["torneios", "campeonatos", "agenda", "próximo jogo"],
         response:
-            "A FURIA segue competindo nos principais campeonatos mundiais. Fique ligado nas redes sociais para acompanhar a agenda. 📅",
+            "A FURIA segue competindo nos principais campeonatos mundiais. Fique ligado nas redes sociais para acompanhar a agenda ou veja na aba EVENTOS do aplicativo. 📅",
     },
     {
         keywords: ["onde assistir", "live", "stream", "jogo ao vivo"],
@@ -73,13 +107,10 @@ export const furiaKeywords: KeywordResponse[] = [
             "Assista aos jogos da FURIA nos canais da ESL, Blast, Gaules e outras streams oficiais na Twitch e YouTube! 🎥",
     },
     {
-        keywords: ["hashtag", "orgulho", "hino", "grito"],
+        keywords: ["hashtag", "orgulho", "hino", "grito", "brabo"],
         response: "Somos #DIADEFURIA! Um grito de raça, emoção e torcida. 🖤",
     },
-    {
-        keywords: ["tchau", "adeus", "falou", "até mais"],
-        response: "Valeu, fã da FURIA! Até a próxima! 🐾",
-    },
+
     {
         keywords: ["k"],
         response: "Muito engraçado! 😂",
