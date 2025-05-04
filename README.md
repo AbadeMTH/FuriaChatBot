@@ -66,10 +66,10 @@ Caso queiro utilizar seu dispositivo móvel para verificar o projeto?
     > Certifique-se de ter o [Expo Go](https://expo.dev/client) instalado no seu celular para testar o app via QR Code.
 
 ## 📸 Imagens
-Prints da Tela Home
+- Prints da Tela Home
 <img src="./assets/images/prints/homeDark.png" alt="Tela Home no tema Escuro" width="300" style="margin-right: 10px"/> <img src="./assets/images/prints/homeLight.png" alt="Tela Home no tema Claro" width="300" style="margin-left: 10px;"/>
 
-Prints do Chat
+- Prints do Chat
 <img src="./assets/images/prints/chatEmptyDark.png" alt="Chat Vazio no tema Escuro" width="300" style="margin-right: 10px;"/><img src="./assets/images/prints/chatDark.png" alt="Chat no tema Escuro" width="300" style="margin-left: 10px;"/>
 
 
