@@ -1,4 +1,4 @@
-import { furiaKeywords } from "./mocks";
+import { furiaKeywords } from "./chatMock";
 
 //Função responsável por encontrar a resposta do bot baseado na mensagem do usuário através dos mocks
 export function findResponse(userInput: string): string | null {

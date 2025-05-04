@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
     },
     boxMessageUser: {
+        borderTopEndRadius: 0,
         borderRadius: 10,
         padding: 10,
         maxWidth: "80%",
@@ -118,6 +119,7 @@ const styles = StyleSheet.create({
         height: 20,
     },
     boxMessageChat: {
+        borderTopStartRadius: 0,
         borderRadius: 10,
         padding: 10,
         maxWidth: "80%",

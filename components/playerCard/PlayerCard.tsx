@@ -49,42 +49,78 @@ export function PlayerCard(props: TeamMember) {
                     <View
                         darkColor="playerCardBackground"
                         lightColor="playerCardBackground"
-                        style={{ width: "50%" }}
                     >
                         <Text
                             darkColor="text"
                             lightColor="white"
-                            style={styles.countryTitle}
+                            style={styles.subinfoTitle}
                         >
-                            Nacionalidade
+                            Rating
                         </Text>
                         <Text
                             darkColor="playerSubInfos"
                             lightColor="playerSubInfos"
-                            style={styles.country}
+                            style={styles.subinfo}
                         >
-                            {props.country}
+                            {props.rating}
                         </Text>
                     </View>
 
                     <View
                         darkColor="playerCardBackground"
                         lightColor="playerCardBackground"
-                        style={{ width: "50%" }}
                     >
                         <Text
                             darkColor="text"
                             lightColor="white"
-                            style={styles.countryTitle}
+                            style={styles.subinfoTitle}
                         >
-                            Role
+                            K/R
                         </Text>
                         <Text
                             darkColor="playerSubInfos"
                             lightColor="playerSubInfos"
-                            style={styles.country}
+                            style={styles.subinfo}
                         >
-                            {props.role}
+                            {props.kr}
+                        </Text>
+                    </View>
+                    <View
+                        darkColor="playerCardBackground"
+                        lightColor="playerCardBackground"
+                    >
+                        <Text
+                            darkColor="text"
+                            lightColor="white"
+                            style={styles.subinfoTitle}
+                        >
+                            HS%
+                        </Text>
+                        <Text
+                            darkColor="playerSubInfos"
+                            lightColor="playerSubInfos"
+                            style={styles.subinfo}
+                        >
+                            {props.hs}
+                        </Text>
+                    </View>
+                    <View
+                        darkColor="playerCardBackground"
+                        lightColor="playerCardBackground"
+                    >
+                        <Text
+                            darkColor="text"
+                            lightColor="white"
+                            style={styles.subinfoTitle}
+                        >
+                            Maps
+                        </Text>
+                        <Text
+                            darkColor="playerSubInfos"
+                            lightColor="playerSubInfos"
+                            style={styles.subinfo}
+                        >
+                            {props.maps}
                         </Text>
                     </View>
                 </View>
@@ -102,6 +138,7 @@ const styles = StyleSheet.create({
         marginLeft: "10%",
         marginVertical: "5%",
         borderRadius: 30,
+        elevation: 6,
     },
     imageContainer: {
         width: "100%",
@@ -124,6 +161,7 @@ const styles = StyleSheet.create({
     infos: {
         flexDirection: "row",
         width: "100%",
+        justifyContent: "space-between"
     },
     nickname: {
         fontSize: 20,
@@ -134,11 +172,11 @@ const styles = StyleSheet.create({
         marginTop: 3,
         marginBottom: 15,
     },
-    countryTitle: {
+    subinfoTitle: {
         fontSize: 14,
         fontWeight: "bold",
     },
-    country: {
+    subinfo: {
         fontSize: 14,
         fontStyle: "italic",
     },

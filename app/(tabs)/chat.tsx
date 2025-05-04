@@ -3,7 +3,7 @@ import { FlatList, KeyboardAvoidingView, StyleSheet } from "react-native";
 import { Text, View } from "@/components/Themed";
 import { MessageBox } from "@/components/chat/MessageBox";
 import { ChatInput } from "@/components/chat/ChatInput";
-import { Message } from "@/components/chat/chatUtils/mocks";
+import { Message } from "@/components/chat/chatUtils/chatMock";
 import { useRef, useState } from "react";
 import { findResponse } from "@/components/chat/chatUtils/findResponse";
 

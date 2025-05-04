@@ -44,6 +44,7 @@ export default {
         playerFullName: paletteColor.b500,
         playerSubInfos: paletteColor.b500,
         playerImageBackground: paletteColor.r500,
+        separator: paletteColor.r500,
     },
     light: {
         text: paletteColor.b900,
