@@ -30,7 +30,7 @@ export function AchievementsLists() {
                         title="Navegar para o Chat Furioso"
                     />
                     <ButtonNavigate
-                        path="(tabs)/matches"
+                        path="(tabs)/events"
                         title="Visualizar próximos eventos da FURIA"
                     />
                     <ButtonNavigate

@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import { Text, View } from "@/components/Themed";
 import { ChampionshipsCardList } from "@/components/matches_championshipsCard/ChampionshipsCardList";
 
-export default function MatchesScreen() {
+export default function EventsScreen() {
     return (
         <View style={styles.container}>
             <ChampionshipsCardList />

@@ -48,9 +48,9 @@ export default function TabLayout() {
                 }}
             />
             <Tabs.Screen
-                name="matches"
+                name="events"
                 options={{
-                    title: "Matches",
+                    title: "Eventos",
                     tabBarIcon: ({ color }) => (
                         <TabBarIcon name="gamepad" color={color} />
                     ),
