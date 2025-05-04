@@ -69,23 +69,23 @@ Caso queiro utilizar seu dispositivo móvel para verificar o projeto?
 
 #### Prints da Tela Home em ambos Temas
 
-<img src="./assets/images/prints/homeDark.png" alt="Tela Home no tema Escuro" width="300" style="margin-right: 10px"/> <img src="./assets/images/prints/homeLight.png" alt="Tela Home no tema Claro" width="300" style="margin-left: 30px;"/>
+<img src="./assets/images/prints/homeDark.png" alt="Tela Home no tema Escuro" width="300" style="margin-right: 30px"/> <img src="./assets/images/prints/homeLight.png" alt="Tela Home no tema Claro" width="300" style="margin-left: 30px;"/>
 
 #### Prints do Chat no Tema Escuro
 
-<img src="./assets/images/prints/chatEmptyDark.png" alt="Chat Vazio no tema Escuro" width="300" style="margin-right: 10px;"/><img src="./assets/images/prints/chatDark.png" alt="Chat no tema Escuro" width="300" style="margin-left: 30px;"/>
+<img src="./assets/images/prints/chatEmptyDark.png" alt="Chat Vazio no tema Escuro" width="300" style="margin-right: 30px;"/><img src="./assets/images/prints/chatDark.png" alt="Chat no tema Escuro" width="300" style="margin-left: 30px;"/>
 
 #### Prints do Chat no Tema Claro
 
-<img src="./assets/images/prints/chatEmptyLight.png" alt="Chat Vazio no tema Claro" width="300" style="margin-right: 10px;"/><img src="./assets/images/prints/chatLight.png" alt="Chat no tema Claro" width="300" style="margin-left: 30px;"/>
+<img src="./assets/images/prints/chatEmptyLight.png" alt="Chat Vazio no tema Claro" width="300" style="margin-right: 30px;"/><img src="./assets/images/prints/chatLight.png" alt="Chat no tema Claro" width="300" style="margin-left: 30px;"/>
 
 #### Prints da Tela Eventos em ambos Temas
 
-<img src="./assets/images/prints/eventsDark.png" alt="Tela Eventos no tema Escuro" width="300" style="margin-right: 10px;"/><img src="./assets/images/prints/eventsLight.png" alt="Tela Eventos no tema Claro" width="300" style="margin-left: 30px;"/>
+<img src="./assets/images/prints/eventsDark.png" alt="Tela Eventos no tema Escuro" width="300" style="margin-right: 30px;"/><img src="./assets/images/prints/eventsLight.png" alt="Tela Eventos no tema Claro" width="300" style="margin-left: 30px;"/>
 
 #### Prints da Tela Line-Up em ambos Temas
 
-<img src="./assets/images/prints/lineupDark.png" alt="Tela Line-Up no tema Escuro" width="300" style="margin-right: 10px;"/><img src="./assets/images/prints/lineupLight.png" alt="Tela Line-Up no tema Claro" width="300" style="margin-left: 30px;"/>
+<img src="./assets/images/prints/lineupDark.png" alt="Tela Line-Up no tema Escuro" width="300" style="margin-right: 30px;"/><img src="./assets/images/prints/lineupLight.png" alt="Tela Line-Up no tema Claro" width="300" style="margin-left: 30px;"/>
 
 ## 👨‍💻 Autor
 
