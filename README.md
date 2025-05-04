@@ -66,8 +66,8 @@ Caso queiro utilizar seu dispositivo móvel para verificar o projeto?
     > Certifique-se de ter o [Expo Go SDK 52](https://expo.dev/client) instalado no seu celular para testar o app via QR Code.
 
 ## OBSERVAÇÕES
-O aplicativo foi desenvolvido e testado APENAS em dispositivos ANDROIDS!
-O Expo Go deve ser instalado baseado na sua versão da SDK 52!
+- O aplicativo foi desenvolvido e testado APENAS em dispositivos ANDROIDS!
+- O Expo Go deve ser instalado baseado na sua versão da SDK 52!
 
 ## 📸 Imagens
 
